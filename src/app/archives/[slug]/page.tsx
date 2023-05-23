@@ -25,7 +25,7 @@ export default async function PostsSlugPage({ params }: { params: any }) {
   return <PostPage post={post!} morePosts={morePosts} settings={settings} />;
 }
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const slugs = await getAllPostsSlugs();
 
   return {
