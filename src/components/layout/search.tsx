@@ -53,8 +53,10 @@ export default function Search() {
           name="search"
           placeholder="Search archives..."
           autoComplete="off"
-          className={`w-0 duration-200 placeholder:invisible dark:border-black pl-2 rounded border px-4 py-2 border-gray-200 text-black dark:bg-black dark:text-gray-100 ${
-            searchBarOpen ? "!w-full !border-gray-500 placeholder:!visible" : ""
+          className={`w-0 duration-200 placeholder:invisible dark:border-black rounded border py-2 border-gray-200 text-black dark:bg-black dark:text-gray-100 ${
+            searchBarOpen
+              ? "!w-full !border-gray-500 placeholder:!visible px-4"
+              : ""
           }`}
         />
         <button

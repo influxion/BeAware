@@ -9,7 +9,7 @@ export default function Navigation() {
           Be Aware!
         </Link>
         <div className="flex md:gap-4 gap-2 items-center">
-          <Search />
+          {/* <Search /> */}
           <Link className="" href="/archives">
             Archives
           </Link>
