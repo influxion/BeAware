@@ -3,7 +3,7 @@ import MoreStories from "@/components/archives/MoreStories";
 import SectionSeparator from "@/components/archives/SectionSeparator";
 import PostBody from "./PostBody";
 import PostHeader from "./PostHeader";
-import PostTitle from "./PostTitle";
+import Title from "../global/Title";
 import type { Post, Settings } from "@/lib/sanity/queries";
 
 export interface PostPageProps {
@@ -29,7 +29,7 @@ export default function PostPage(props: PostPageProps) {
     <main>
       <div className="max-w-7xl mx-auto px-4">
         {preview && !post ? (
-          <PostTitle>Loading…</PostTitle>
+          <Title>Loading…</Title>
         ) : (
           <>
             <article>

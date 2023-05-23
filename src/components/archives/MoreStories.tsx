@@ -6,7 +6,7 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
   return (
     <section>
       <h2 className="mb-8 text-4xl font-bold leading-tight tracking-tighter lg:text-7xl">
-        More Reports
+        More Archives
       </h2>
       <div className="grid gap-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-12 md:mb-24">
         {posts

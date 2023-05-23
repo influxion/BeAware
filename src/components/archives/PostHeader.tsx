@@ -1,5 +1,5 @@
 import { parseISO, format } from "date-fns";
-import PostTitle from "./PostTitle";
+import Title from "../global/Title";
 import type { Post } from "@/lib/sanity/queries";
 
 export default function PostHeader(
@@ -9,7 +9,7 @@ export default function PostHeader(
   const parsedDate = parseISO(date as string);
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <Title>{title}</Title>
 
       <div className="mx-auto max-w-2xl mb-6">
         <div className="flex justify-between items-center mb-6">

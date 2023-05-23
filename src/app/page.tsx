@@ -1,3 +1,4 @@
+import Title from "@/components/global/Title";
 import { getAllPosts } from "@/lib/sanity/client";
 import { urlForImage } from "@/lib/sanity/image";
 import { Post } from "@/lib/sanity/queries";
@@ -15,25 +16,22 @@ export default async function Home() {
   return (
     <div className="max-w-5xl mx-auto px-4">
       <div className="relative mt-72 mb-48 md:w-1/2 flex flex-col gap-2 before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl">
-          Be Aware!
-        </h1>
+        <Title className="!mb-0">Be Aware!</Title>
         <p className="dark:text-white/75 text-black/75">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          odio natus laudantium corporis quia alias molestiae nostrum nesciunt
-          obcaecati ad? Neque laudantium voluptate deleniti eveniet, praesentium
-          amet ipsam tenetur cum.
+          As we all know the vastness of cybersecurity can be overwhelming. Here
+          you will find resources to help protect youself or your business from
+          web vunerabilites, physical vunerabilites, active scams, and more.
         </p>
         <Link
           href="/archives"
           className="py-2 px-4 w-fit mt-2 rounded-md dark:bg-white dark:text-black text-white bg-black z-10 hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
         >
-          View all posts
+          All Archives
         </Link>
       </div>
       <div className="w-full mb-24">
         <h4 className="text-center text-3xl lg:text-5xl font-bold mb-8">
-          Featured Archive
+          Featured
         </h4>
         <Link
           href={`/archives/${featuredPost.slug}`}
@@ -72,7 +70,7 @@ export default async function Home() {
           </h4>
           <div className="flex flex-col gap-4">
             {posts
-              .filter((post) => post.slug !== featuredPost.slug)
+              .filter((post, i) => post.slug !== featuredPost.slug && i < 6)
               .map((post) => (
                 <Link
                   key={post._id}
@@ -105,6 +103,14 @@ export default async function Home() {
                   </div>
                 </Link>
               ))}
+            {posts.length > 6 ? (
+              <Link
+                href="/archives"
+                className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105 justify-center"
+              >
+                <p>Browse all archives</p>
+              </Link>
+            ) : null}
           </div>
         </div>
       ) : null}
