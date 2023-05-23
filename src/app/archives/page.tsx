@@ -7,7 +7,6 @@ import Link from "next/link";
 export default async function ArchivesPage() {
   const posts: Post[] = await getAllPosts();
 
-  console.log(posts);
   return (
     <div className="max-w-7xl mx-auto px-4">
       <h1 className="md:text-6xl text-4xl text-center font-light py-12 md:py-24">
