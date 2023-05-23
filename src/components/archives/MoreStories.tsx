@@ -12,7 +12,7 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
         {posts
           .filter((_, i) => i < 5)
           .map((post) => (
-            <ArchivePreview post={post} />
+            <ArchivePreview key={post._id} post={post} />
           ))}
         <Link
           href="/archives"

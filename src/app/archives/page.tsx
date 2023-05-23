@@ -11,7 +11,7 @@ export default async function ArchivesPage() {
       <Title>Archives</Title>
       <div className="grid gap-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 mb-12 md:mb-24">
         {posts.map((post) => (
-          <ArchivePreview post={post} />
+          <ArchivePreview key={post._id} post={post} />
         ))}
       </div>
     </div>
