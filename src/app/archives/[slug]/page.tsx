@@ -29,6 +29,6 @@ export async function generateStaticParams() {
   const slugs = await getAllPostsSlugs();
 
   return slugs.map(({ slug }) => ({
-    slug: `/archives/${slug}`,
+    slug,
   }));
 }
