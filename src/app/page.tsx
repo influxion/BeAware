@@ -70,6 +70,7 @@ export default async function Home() {
           .filter((post) => post.slug !== featuredPost.slug)
           .map((post) => (
             <Link
+              key={post._id}
               href={`/archives/${post.slug}`}
               className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
             >
