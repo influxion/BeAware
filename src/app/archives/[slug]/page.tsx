@@ -28,8 +28,7 @@ export default async function PostsSlugPage({ params }: { params: any }) {
 export async function generateStaticParams() {
   const slugs = await getAllPostsSlugs();
 
-  return {
-    paths: slugs?.map(({ slug }) => `/archives/${slug}`) || [],
-    fallback: "blocking",
-  };
+  return slugs.map(({ slug }) => ({
+    slug: `/archives/${slug}`,
+  }));
 }
