@@ -16,10 +16,10 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
           ))}
         <Link
           href="/archives"
-          className="border border-gray-200 rounded flex flex-col relative hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105 h-full justify-center items-center p-6"
+          className="border border-gray-200 rounded flex flex-col relative hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%] h-full justify-center items-center p-6"
         >
-          <p className="text-2xl px-4 py-2 dark:bg-white dark:text-black rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105">
-            View all archives
+          <p className="text-2xl px-4 py-2 dark:bg-white dark:text-black rounded-md">
+            Browse all archives
           </p>
         </Link>
       </div>

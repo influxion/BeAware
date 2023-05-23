@@ -35,7 +35,7 @@ export default async function Home() {
         </h4>
         <Link
           href={`/archives/${featuredPost.slug}`}
-          className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
+          className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%]"
         >
           <Image
             className="object-contain rounded !max-h-[200px] !w-1/2 select-none pointer-events-none !relative"

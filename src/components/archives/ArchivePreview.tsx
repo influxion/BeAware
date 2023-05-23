@@ -8,7 +8,7 @@ export default function ArchivePreview({ post }: { post: Post }) {
     <Link
       href={`/archives/${post.slug}`}
       key={post._id}
-      className="border border-gray-200 rounded flex flex-col relative hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
+      className="border border-gray-200 rounded flex flex-col relative hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%]"
     >
       <Image
         className="object-fill rounded !h-fit max-h-[400px] select-none pointer-events-none !relative"
