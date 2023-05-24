@@ -20,7 +20,7 @@ export default function PostHeader(
             {format(parsedDate, "LLLL	d, yyyy")}
           </div>
         </div>
-        <div className="border-b rounded-full"></div>
+        <div className="border border-gray-200/50 rounded-full"></div>
       </div>
     </>
   );

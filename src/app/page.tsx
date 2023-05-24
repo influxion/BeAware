@@ -33,35 +33,7 @@ export default async function Home() {
         <h4 className="text-center text-3xl lg:text-5xl font-bold mb-8">
           Featured
         </h4>
-        <Link
-          href={`/archives/${featuredPost.slug}`}
-          className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%]"
-        >
-          <Image
-            className="object-contain rounded !max-h-[200px] !w-1/2 select-none pointer-events-none !relative"
-            fill
-            alt={`Cover Image for ${featuredPost.title}`}
-            src={urlForImage(featuredPost.coverImage).url()}
-          />
-          <div className="flex flex-col gap-1 w-full">
-            <h3 className="md:text-2xl text-xl font-semibold">
-              {featuredPost.title}
-            </h3>
-            <p className="dark:text-white/50 text-black/50">
-              {new Date(featuredPost.date as string).toLocaleDateString(
-                "en-US",
-                {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                }
-              )}
-            </p>
-            <p className="dark:text-white/75 text-black/75">
-              {featuredPost.excerpt}
-            </p>
-          </div>
-        </Link>
+        <HomePageArchivePreview key={featuredPost._id} post={featuredPost} />
       </div>
       {posts.length > 1 ? (
         <div className="border-t py-24">
@@ -72,36 +44,7 @@ export default async function Home() {
             {posts
               .filter((post, i) => post.slug !== featuredPost.slug && i < 6)
               .map((post) => (
-                <Link
-                  key={post._id}
-                  href={`/archives/${post.slug}`}
-                  className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
-                >
-                  <Image
-                    className="object-contain rounded !max-h-[200px] !w-1/2 select-none pointer-events-none !relative"
-                    fill
-                    alt={`Cover Image for ${post.title}`}
-                    src={urlForImage(post.coverImage).url()}
-                  />
-                  <div className="flex flex-col gap-1 w-full">
-                    <h3 className="md:text-2xl text-xl font-semibold">
-                      {post.title}
-                    </h3>
-                    <p className="dark:text-white/50 text-black/50">
-                      {new Date(post.date as string).toLocaleDateString(
-                        "en-US",
-                        {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        }
-                      )}
-                    </p>
-                    <p className="dark:text-white/75 text-black/75">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                </Link>
+                <HomePageArchivePreview key={post._id} post={post} />
               ))}
             {posts.length > 6 ? (
               <Link
@@ -115,5 +58,34 @@ export default async function Home() {
         </div>
       ) : null}
     </div>
+  );
+}
+
+function HomePageArchivePreview({ post }: { post: Post }) {
+  return (
+    <Link
+      href={`/archives/${post.slug}`}
+      className="flex md:flex-row flex-col gap-4 items-center border rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
+    >
+      <div className="w-1/3">
+        <Image
+          className="object-fit rounded-md-l  !w-full mr-auto select-none pointer-events-none !relative"
+          fill
+          alt={`Cover Image for ${post.title}`}
+          src={urlForImage(post.coverImage).url()}
+        />
+      </div>
+      <div className="flex flex-col gap-1 w-2/3 p-6">
+        <h3 className="md:text-2xl text-xl font-semibold">{post.title}</h3>
+        <p className="dark:text-white/50 text-black/50">
+          {new Date(post.date as string).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })}
+        </p>
+        <p className="dark:text-white/75 text-black/75">{post.excerpt}</p>
+      </div>
+    </Link>
   );
 }

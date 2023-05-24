@@ -2,6 +2,7 @@ import Navigation from "@/components/layout/navigation";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/layout/footer";
+import MouseTrail from "@/components/global/MouseTrail";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <MouseTrail>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </MouseTrail>
       </body>
     </html>
   );
