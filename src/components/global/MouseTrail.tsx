@@ -6,15 +6,15 @@ const MouseTrail = ({ children }: { children: any }) => {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    const updatePosition = (clientX, clientY) => {
+    const updatePosition = (clientX: number, clientY: number) => {
       setPosition({ x: clientX, y: clientY });
     };
 
-    const onMouseMove = (e) => {
+    const onMouseMove = (e: any) => {
       updatePosition(e.clientX, e.clientY);
     };
 
-    const onTouchMove = (e) => {
+    const onTouchMove = (e: any) => {
       const touch = e.touches[0];
       updatePosition(touch.clientX, touch.clientY);
     };
