@@ -18,9 +18,9 @@ export default async function Home() {
       <div className="relative md:mt-72 mt-48 md:mb-48 mb-24 md:w-1/2 flex flex-col gap-2 before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
         <Title className="!m-0">Be Aware!</Title>
         <p className="dark:text-white/75 text-black/75">
-          As we all know the vastness of cybersecurity can be overwhelming. Here
-          you will find resources to help protect youself or your business from
-          web vunerabilites, physical vunerabilites, active scams, and more.
+          The vastness of cybersecurity can be overwhelming. Here you will find
+          core resources to help protect youself or your business from web
+          vunerabilites, physical vunerabilites, active scams, and more.
         </p>
         <Link
           href="/archives"
@@ -49,7 +49,7 @@ export default async function Home() {
             {posts.length > 6 ? (
               <Link
                 href="/archives"
-                className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105 justify-center"
+                className="flex md:flex-row flex-col gap-4 items-center border p-4 rounded-md hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%] justify-center hover:outline focus:outline outline-1"
               >
                 <p>Browse all archives</p>
               </Link>
@@ -65,7 +65,7 @@ function HomePageArchivePreview({ post }: { post: Post }) {
   return (
     <Link
       href={`/archives/${post.slug}`}
-      className="flex md:flex-row flex-col gap-4 items-center border rounded-md hover:scale-105 transition-all duration-300 ease-in-out focus:scale-105"
+      className="flex md:flex-row flex-col gap-4 items-center border border-gray-200/50 rounded-md hover:scale-[101%] transition-all duration-300 ease-in-out focus:scale-[101%] hover:outline focus:outline outline-1"
     >
       <div className="w-1/3">
         <Image
