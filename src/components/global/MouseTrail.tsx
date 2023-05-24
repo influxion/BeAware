@@ -6,8 +6,17 @@ const MouseTrail = ({ children }: { children: any }) => {
   const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
-    const onMouseMove = (e: any) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const updatePosition = (clientX, clientY) => {
+      setPosition({ x: clientX, y: clientY });
+    };
+
+    const onMouseMove = (e) => {
+      updatePosition(e.clientX, e.clientY);
+    };
+
+    const onTouchMove = (e) => {
+      const touch = e.touches[0];
+      updatePosition(touch.clientX, touch.clientY);
     };
 
     const onMouseDown = () => {
@@ -19,13 +28,19 @@ const MouseTrail = ({ children }: { children: any }) => {
     };
 
     document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("touchmove", onTouchMove);
     document.addEventListener("mousedown", onMouseDown);
     document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("touchstart", onMouseDown);
+    document.addEventListener("touchend", onMouseUp);
 
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
+      document.removeEventListener("touchmove", onTouchMove);
       document.removeEventListener("mousedown", onMouseDown);
       document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener("touchstart", onMouseDown);
+      document.removeEventListener("touchend", onMouseUp);
     };
   }, []);
 
