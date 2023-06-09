@@ -24,6 +24,7 @@ export default function PostPage(props: PostPageProps) {
   if (!slug && !preview) {
     notFound();
   }
+  console.log(post);
 
   return (
     <main>
@@ -34,6 +35,7 @@ export default function PostPage(props: PostPageProps) {
           <>
             <article>
               <PostHeader
+                coverImage={post.coverImage}
                 title={post.title}
                 date={post.date}
                 author={post.author}
