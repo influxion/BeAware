@@ -17,6 +17,9 @@ export default async function Home() {
     <div className="max-w-5xl mx-auto px-4">
       <div className="relative md:mt-72 mt-48 md:mb-48 mb-24 md:w-1/2 flex flex-col gap-2 before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
         <Title className="!m-0">Be Aware!</Title>
+        <p className="text-xs">
+          By: <span className="font-bold">Jordon Nichols</span>
+        </p>
         <p className="dark:text-white/75 text-black/75">
           The vastness of cybersecurity can be overwhelming. Here you will find
           core resources to help protect youself or your business from web
